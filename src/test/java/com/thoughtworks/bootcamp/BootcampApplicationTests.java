@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BootcampApplicationTests {
 
 	@Test
-	void findAreaOfRectangleReturnsOutput() {
+	void testAreaOfRectangleReturnsOutput() {
 		Random rand = new Random();
 		int rand_int1 = rand.nextInt(1000);
 		int rand_int2 = rand.nextInt(1000);
@@ -21,7 +21,7 @@ class BootcampApplicationTests {
 	}
 
 	@Test
-	void findAreaOfRectangleNullBreadthInputAssertsException() {
+	void testAreaOfRectangleNullBreadthInputAssertsException() {
 		Random rand = new Random();
 
 		// Generate random integers in range 0 to 999
@@ -37,7 +37,7 @@ class BootcampApplicationTests {
 	}
 
 	@Test
-	void findAreaOfRectangleNullLengthInputAssertsException() {
+	void testAreaOfRectangleNullLengthInputAssertsException() {
 		Random rand = new Random();
 
 		// Generate random integers in range 0 to 999
