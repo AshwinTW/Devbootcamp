@@ -15,9 +15,9 @@ class BootcampApplicationTests {
 	@Test
 	void testAreaOfRectangleReturnsOutput() {
 		Random rand = new Random();
-		int rand_int1 = rand.nextInt(1000);
-		int rand_int2 = rand.nextInt(1000);
-		assertEquals(BootcampApplication.findAreaOfRectangle(rand_int1,rand_int2),rand_int1*rand_int2);
+		Integer length = rand.nextInt(1000);
+		Integer breadth = rand.nextInt(1000);
+		assertEquals(BootcampApplication.findAreaOfRectangle(length,breadth),length*breadth);
 	}
 
 	@Test
@@ -25,9 +25,10 @@ class BootcampApplicationTests {
 		Random rand = new Random();
 
 		// Generate random integers in range 0 to 999
-		int rand_int1 = rand.nextInt(1000);
+		Integer length = rand.nextInt(1000);
+		Integer breadth = null;
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			BootcampApplication.findAreaOfRectangle(rand_int1,null);
+			BootcampApplication.findAreaOfRectangle(length,breadth);
 		});
 
 		String expectedMessage = "Invalid Input";
@@ -41,9 +42,10 @@ class BootcampApplicationTests {
 		Random rand = new Random();
 
 		// Generate random integers in range 0 to 999
-		int rand_int1 = rand.nextInt(1000) * -1;
+		int length = rand.nextInt(1000) * -1;
+		int breath = rand.nextInt(1000);
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			BootcampApplication.findAreaOfRectangle(null,rand_int1);
+			BootcampApplication.findAreaOfRectangle(null,length);
 		});
 
 		String expectedMessage = "Invalid Input";
