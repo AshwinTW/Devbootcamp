@@ -30,23 +30,23 @@ class BootcampApplicationTests {
 			BootcampApplication.findAreaOfRectangle(rand_int1,null);
 		});
 
-		String expectedMessage = "Input Cannot be null";
+		String expectedMessage = "Invalid Input";
 		String actualMessage = exception.getMessage();
 
 		assertTrue(actualMessage.contains(expectedMessage));
 	}
 
 	@Test
-	void testAreaOfRectangleNullLengthInputAssertsException() {
+	void testAreaOfRectangleNegativeInputAssertsException() {
 		Random rand = new Random();
 
 		// Generate random integers in range 0 to 999
-		int rand_int1 = rand.nextInt(1000);
+		int rand_int1 = rand.nextInt(1000) * -1;
 		Exception exception = assertThrows(RuntimeException.class, () -> {
 			BootcampApplication.findAreaOfRectangle(null,rand_int1);
 		});
 
-		String expectedMessage = "Input Cannot be null";
+		String expectedMessage = "Invalid Input";
 		String actualMessage = exception.getMessage();
 
 		assertTrue(actualMessage.contains(expectedMessage));

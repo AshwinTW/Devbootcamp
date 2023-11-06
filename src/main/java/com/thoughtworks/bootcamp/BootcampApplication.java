@@ -10,10 +10,9 @@ public class BootcampApplication {
 
 
 	}
-
 	public static int findAreaOfRectangle(Integer length, Integer breath){
-		if(length==null || breath == null){
-			throw new RuntimeException("Input Cannot be null");
+		if(length==null || breath == null || length < 0 || breath < 0){
+			throw new RuntimeException("Invalid Input");
 		}
 		return length*breath;
 	}
